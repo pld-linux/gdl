@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 %gnome_schema_install
 
-%preun -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files -f gdl-1.lang
 %defattr(644,root,root,755)
