@@ -25,12 +25,13 @@ browser bonobo component (symbol-browser-control), a docking widget
 the symbol browser and text editor components (gdl, idl).
 
 %description -l pl
-Ten pakiet zawieka komponenty i biblioteki dzielone miêdzy narzêdziami
-programistycznymi GNOME, takimi jak gnome-debug, gnome-build i
-anjuta2. Aktualnie GDL zawiera: przegl±darkê symboli jako komponent
-bonobo (symbol-browser-control), dokowany element interfejsu
-graficznego (gdl), bibliotekê narzêdzi zawieraj±c± tak¿e szkielety dla
-przegl±darki symboli i komponentów edytora tekstu (gdl, idl).
+Ten pakiet zawiera komponenty i biblioteki zaprojektowane jako wspólne
+dla ró¿nych narzêdzi programistycznych GNOME, takich jak: gnome-debug,
+gnome-build i anjuta2. Aktualnie GDL zawiera: przegl±darkê symboli
+jako komponent bonobo (symbol-browser-control), dokowany element
+interfejsu graficznego (gdl), bibliotekê narzêdzi zawieraj±c± tak¿e
+szkielety dla przegl±darki symboli i komponentów edytora tekstu (gdl,
+idl).
 
 %package devel
 Summary:	Header files for gdl development
