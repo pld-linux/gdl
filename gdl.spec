@@ -10,7 +10,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.4/%{name}-%{version}.tar.b
 Patch0:		%{name}-locale.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-common
+BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	libbonoboui-devel >= 2.2.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.2.0
@@ -67,7 +67,7 @@ Pakiet zawiera statyczne biblioteki gdl.
 %build
 glib-gettextize --copy --force
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
