@@ -4,7 +4,7 @@ Version:	0.4.0
 Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/%{name}/0.4/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	eb4dfd9def266e4e5cd1e9883b5bdf2a
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -20,9 +20,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package contains components and libraries that are intended to be
 shared between GNOME development tools, including gnome-debug,
 gnome-build, and anjuta2. The current pieces of GDL include: a symbol
-browser bonobo component (symbol-browser-control), a docking widget (gdl),
-a utility library that also contains the stubs and skels for the symbol
-browser and text editor components (gdl, idl).
+browser bonobo component (symbol-browser-control), a docking widget
+(gdl), a utility library that also contains the stubs and skels for
+the symbol browser and text editor components (gdl, idl).
 
 %package devel
 Summary:	Header files for gdl development
