@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-%gnome_schema_install
+%gconf_schema_install
 
 %postun -p /sbin/ldconfig
 
