@@ -1,4 +1,5 @@
 Summary:	Gnome Devtool Libraries
+Summary(pl):	Biblioteki Gnome Devtool
 Name:		gdl
 Version:	0.4.0
 Release:	2
@@ -28,7 +29,7 @@ Ten pakiet zawieka komponenty i biblioteki dzielone miêdzy narzêdziami
 programistycznymi GNOME, takimi jak gnome-debug, gnome-build i
 anjuta2. Aktualnie GDL zawiera: przegl±darkê symboli jako komponent
 bonobo (symbol-browser-control), dokowany element interfejsu
-graficznego (gdl), bibliotekê narzêdzi zawiêraj±c± tak¿e szkielety dla
+graficznego (gdl), bibliotekê narzêdzi zawieraj±c± tak¿e szkielety dla
 przegl±darki symboli i komponentów edytora tekstu (gdl, idl).
 
 %package devel
@@ -81,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}-1.lang
 %defattr(644,root,root,755)
