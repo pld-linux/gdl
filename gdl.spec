@@ -1,5 +1,5 @@
-Summary:	Gnome Devtool Libraries
-Summary(pl):	Biblioteki Gnome Devtool
+Summary:	GNOME Devtool Libraries
+Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	0.4.0
 Release:	2
