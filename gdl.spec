@@ -1,13 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.4.0
-Release:	2
+Version:	0.5.0
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	eb4dfd9def266e4e5cd1e9883b5bdf2a
-Patch0:		%{name}-locale.patch
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.5/%{name}-%{version}.tar.bz2
+# Source0-md5:	16971189d8a8cb359bc83a384ac440ec
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.8.0
@@ -62,10 +61,9 @@ Pakiet zawiera statyczne biblioteki gdl.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-glib-gettextize --copy --force
+%{__glib_gettextize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -79,6 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+
 %find_lang %{name}-1 --with-gnome
 
 %clean
@@ -90,11 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}-1.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %{_datadir}/gdl
-%{_datadir}/gnome-2.0/ui/*
 %{_datadir}/idl/libgdl-1.0
 
 %files devel
