@@ -17,7 +17,6 @@ BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.2.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +40,7 @@ idl).
 Summary:	Header files for gdl development
 Summary(pl):	Pliki nag³ówkowe do biblioteki gdl
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This package contains the header files needed to develop programs that
@@ -55,7 +54,7 @@ u¿ywaj±cych bibliotek gdl.
 Summary:	Static libraries for gdl development
 Summary(pl):	Statyczne biblioteki gdl
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains the static gdl libraries.
