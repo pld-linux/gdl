@@ -9,11 +9,15 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.5/%{name}-%{version}.tar.b
 # Source0-md5:	16971189d8a8cb359bc83a384ac440ec
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
+BuildRequires:	intltool
 BuildRequires:	libbonoboui-devel >= 2.2.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.2.0
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
+BuildRequires:	popt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
