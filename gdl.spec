@@ -1,12 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.5.0
+Version:	0.6.0
 Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	16971189d8a8cb359bc83a384ac440ec
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	ae8dabe64edccfeed5ac3630a6169c88
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -95,7 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %{_datadir}/gdl
-%{_datadir}/idl/libgdl-1.0
 
 %files devel
 %defattr(644,root,root,755)
