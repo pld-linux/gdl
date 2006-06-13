@@ -1,20 +1,21 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.6.0
+Version:	0.6.1
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	ae8dabe64edccfeed5ac3630a6169c88
+# Source0-md5:	6d902981efe30950af8f5033d937c270
+Patch0:		%{name}-broken_locale.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.8.0
+BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	intltool
 BuildRequires:	libbonoboui-devel >= 2.2.0
-BuildRequires:	libglade2-devel >= 2.0.0
-BuildRequires:	libgnomeui-devel >= 2.2.0
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.15.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -64,9 +65,11 @@ Pakiet zawiera statyczne biblioteki gdl.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -79,8 +82,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name}-1 --with-gnome
 
