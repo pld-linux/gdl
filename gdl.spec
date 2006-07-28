@@ -2,7 +2,7 @@ Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	0.6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.6/%{name}-%{version}.tar.bz2
@@ -13,9 +13,9 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	intltool
-BuildRequires:	libbonoboui-devel >= 2.2.0
-BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.15.1
+BuildRequires:	libbonoboui-devel >= 2.14.0
+BuildRequires:	libglade2-devel >= 1:2.6.0
+BuildRequires:	libgnomeui-devel >= 2.15.90
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
