@@ -1,21 +1,21 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.6.1
-Release:	2
+Version:	0.7.0
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	6d902981efe30950af8f5033d937c270
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	934fa8f8c1bce88537c1548d2d1090c7
 Patch0:		%{name}-broken_locale.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	intltool
-BuildRequires:	libbonoboui-devel >= 2.14.0
+BuildRequires:	libbonoboui-devel >= 2.16.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.15.90
+BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -74,7 +74,9 @@ Pakiet zawiera statyczne biblioteki gdl.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--enable-static
+
 %{__make}
 
 %install
