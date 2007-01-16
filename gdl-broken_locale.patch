@@ -1,12 +1,13 @@
-diff -aurN gdl-0.6.1.orig/configure.in gdl-0.6.1/configure.in
---- gdl-0.6.1.orig/configure.in	2006-05-15 19:40:16.000000000 +0200
-+++ gdl-0.6.1/configure.in	2006-06-13 20:23:39.809163800 +0200
-@@ -91,7 +91,7 @@
+diff -urN gdl-0.7.0/configure.in gdl-0.7.0.new/configure.in
+--- gdl-0.7.0/configure.in	2007-01-02 23:09:22.000000000 +0100
++++ gdl-0.7.0.new/configure.in	2007-01-16 20:44:08.000000000 +0100
+@@ -139,7 +139,7 @@
  GLIB_MKENUMS="`$PKG_CONFIG --variable=glib_mkenums glib-2.0`"
  AC_SUBST(GLIB_MKENUMS)
  
--ALL_LINGUAS="am az ca cs da de el en_CA en_GB es fi fr ga hr it ja mk ml nb ne nl pa pl pt pt_BR ru rw sk sq sr sr@Latn sv vi zh_CN"
-+ALL_LINGUAS="am ca cs da de el en_CA en_GB es fi fr ga hr it ja mk ml nb ne nl pa pl pt pt_BR ru rw sk sq sr sr@Latn sv vi zh_CN"
+-ALL_LINGUAS="am az ca cs da de el en_CA en_GB es fi fr ga hr hu it ja mk ml nb ne nl pa pl pt pt_BR ru rw sk sq sr sr@Latn sv vi zh_CN"
++ALL_LINGUAS="am ca cs da de el en_CA en_GB es fi fr ga hr hu it ja mk ml nb ne nl pa pl pt pt_BR ru rw sk sq sr sr@Latn sv vi zh_CN"
  GETTEXT_PACKAGE=gdl-1
  AC_SUBST(GETTEXT_PACKAGE)
  AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Package name for gettext])
+Pliki gdl-0.7.0/po/messages.mo i gdl-0.7.0.new/po/messages.mo ró¿ni± siê
