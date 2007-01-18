@@ -1,13 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.7.0
+Version:	0.7.1
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	934fa8f8c1bce88537c1548d2d1090c7
-Patch0:		%{name}-broken_locale.patch
+# Source0-md5:	5f3e065d4fcafc072b12e19e855c2fa1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -65,7 +64,6 @@ Pakiet zawiera statyczne biblioteki gdl.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__glib_gettextize}
