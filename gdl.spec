@@ -1,5 +1,5 @@
 Summary:	GNOME Devtool Libraries
-Summary(pl):	Biblioteki GNOME Devtool
+Summary(pl.UTF-8):   Biblioteki GNOME Devtool
 Name:		gdl
 Version:	0.7.1
 Release:	1
@@ -27,18 +27,18 @@ browser bonobo component (symbol-browser-control), a docking widget
 (gdl), a utility library that also contains the stubs and skels for
 the symbol browser and text editor components (gdl, idl).
 
-%description -l pl
-Ten pakiet zawiera komponenty i biblioteki zaprojektowane jako wspólne
-dla ró¿nych narzêdzi programistycznych GNOME, takich jak: gnome-debug,
-gnome-build i anjuta2. Aktualnie GDL zawiera: przegl±darkê symboli
+%description -l pl.UTF-8
+Ten pakiet zawiera komponenty i biblioteki zaprojektowane jako wspÃ³lne
+dla rÃ³Å¼nych narzÄ™dzi programistycznych GNOME, takich jak: gnome-debug,
+gnome-build i anjuta2. Aktualnie GDL zawiera: przeglÄ…darkÄ™ symboli
 jako komponent bonobo (symbol-browser-control), dokowany element
-interfejsu graficznego (gdl), bibliotekê narzêdzi zawieraj±c± tak¿e
-szkielety dla przegl±darki symboli i komponentów edytora tekstu (gdl,
+interfejsu graficznego (gdl), bibliotekÄ™ narzÄ™dzi zawierajÄ…cÄ… takÅ¼e
+szkielety dla przeglÄ…darki symboli i komponentÃ³w edytora tekstu (gdl,
 idl).
 
 %package devel
 Summary:	Header files for gdl development
-Summary(pl):	Pliki nag³ówkowe do biblioteki gdl
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,20 +46,20 @@ Requires:	%{name} = %{version}-%{release}
 This package contains the header files needed to develop programs that
 use these gdl.
 
-%description devel -l pl
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych bibliotek gdl.
+%description devel -l pl.UTF-8
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych bibliotek gdl.
 
 %package static
 Summary:	Static libraries for gdl development
-Summary(pl):	Statyczne biblioteki gdl
+Summary(pl.UTF-8):   Statyczne biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains the static gdl libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Pakiet zawiera statyczne biblioteki gdl.
 
 %prep
