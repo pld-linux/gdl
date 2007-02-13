@@ -1,5 +1,5 @@
 Summary:	GNOME Devtool Libraries
-Summary(pl.UTF-8):   Biblioteki GNOME Devtool
+Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	0.7.1
 Release:	1
@@ -38,7 +38,7 @@ idl).
 
 %package devel
 Summary:	Header files for gdl development
-Summary(pl.UTF-8):   Pliki nagłówkowe do biblioteki gdl
+Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -52,7 +52,7 @@ używających bibliotek gdl.
 
 %package static
 Summary:	Static libraries for gdl development
-Summary(pl.UTF-8):   Statyczne biblioteki gdl
+Summary(pl.UTF-8):	Statyczne biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
