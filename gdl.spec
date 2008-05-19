@@ -1,21 +1,24 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.7.7
+Version:	0.7.11
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gdl/0.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	c3b676b174c3e6c4ccd654557ebe82ec
-BuildRequires:	autoconf
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/0.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	74f529cc2623376ee793be65439f54d6
+BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.18.0
-BuildRequires:	intltool
-BuildRequires:	libbonoboui-devel >= 2.18.0
-BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.18.1
+BuildRequires:	gnome-vfs2-devel >= 2.22.0
+BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk-doc >= 1.4
+BuildRequires:	intltool >= 0.36.2
+BuildRequires:	libglade2-devel >= 1:2.6.2
+BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -43,6 +46,11 @@ Summary:	Header files for gdl development
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	gnome-vfs2-devel >= 2.22.0
+Requires:	gtk+2-devel >= 2:2.10.0
+Requires:	libglade2-devel >= 1:2.6.2
+Requires:	libgnomeui-devel >= 2.22.0
+Requires:	libxml2-devel >= 1:2.6.26
 
 %description devel
 This package contains the header files needed to develop programs that
@@ -64,6 +72,18 @@ This package contains the static gdl libraries.
 %description static -l pl.UTF-8
 Pakiet zawiera statyczne biblioteki gdl.
 
+%package apidocs
+Summary:	gdl library API documentation
+Summary(pl.UTF-8):	Dokumentacja API biblioteki gdl
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+gdl library API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API biblioteki gdl.
+
 %prep
 %setup -q
 
@@ -73,8 +93,11 @@ Pakiet zawiera statyczne biblioteki gdl.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
+	--with-html-dir=%{_gtkdocdir} \
+	--enable-gtk-doc \
 	--enable-static
 
 %{__make}
@@ -87,7 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 
 [ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
 	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
-%find_lang %{name}-1 --with-gnome
+%find_lang %{name}-1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -98,16 +121,27 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}-1.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libgdl-1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgdl-1.so.0
+%attr(755,root,root) %{_libdir}/libgdl-gnome-1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgdl-gnome-1.so.0
 %{_datadir}/gdl
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libgdl-1.so
+%attr(755,root,root) %{_libdir}/libgdl-gnome-1.so
 %{_includedir}/libgdl-1.0
-%{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_pkgconfigdir}/*.pc
+%{_libdir}/libgdl-1.la
+%{_libdir}/libgdl-gnome-1.la
+%{_pkgconfigdir}/gdl-1.0.pc
+%{_pkgconfigdir}/gdl-gnome-1.0.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgdl-1.a
+%{_libdir}/libgdl-gnome-1.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/gdl
