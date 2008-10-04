@@ -1,22 +1,19 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	0.7.11
+Version:	2.24.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/0.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	74f529cc2623376ee793be65439f54d6
-BuildRequires:	GConf2-devel >= 2.22.0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	1d5cd4af1f4041394169d643316646bf
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	intltool >= 0.36.2
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
@@ -46,10 +43,8 @@ Summary:	Header files for gdl development
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gnome-vfs2-devel >= 2.22.0
-Requires:	gtk+2-devel >= 2:2.10.0
+Requires:	gtk+2-devel >= 2:2.14.0
 Requires:	libglade2-devel >= 1:2.6.2
-Requires:	libgnomeui-devel >= 2.22.0
 Requires:	libxml2-devel >= 1:2.6.26
 
 %description devel
@@ -108,8 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
-	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name}-1
 
 %clean
@@ -123,24 +116,18 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgdl-1.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgdl-1.so.0
-%attr(755,root,root) %{_libdir}/libgdl-gnome-1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgdl-gnome-1.so.0
 %{_datadir}/gdl
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgdl-1.so
-%attr(755,root,root) %{_libdir}/libgdl-gnome-1.so
 %{_includedir}/libgdl-1.0
 %{_libdir}/libgdl-1.la
-%{_libdir}/libgdl-gnome-1.la
 %{_pkgconfigdir}/gdl-1.0.pc
-%{_pkgconfigdir}/gdl-gnome-1.0.pc
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libgdl-1.a
-%{_libdir}/libgdl-gnome-1.a
 
 %files apidocs
 %defattr(644,root,root,755)
