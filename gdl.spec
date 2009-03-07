@@ -1,16 +1,16 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	2.24.0
-Release:	2
+Version:	2.25.92
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	1d5cd4af1f4041394169d643316646bf
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.25/%{name}-%{version}.tar.bz2
+# Source0-md5:	d5b3d9d2d8dd467a73eb29490450b2e9
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	gtk+2-devel >= 2:2.15.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
@@ -43,7 +43,7 @@ Summary:	Header files for gdl development
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.14.0
+Requires:	gtk+2-devel >= 2:2.15.0
 Requires:	libglade2-devel >= 1:2.6.2
 Requires:	libxml2-devel >= 1:2.6.26
 
