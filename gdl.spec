@@ -1,12 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	2.26.0
+Version:	2.26.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	8915b8808d88e12c1bb53e84f50e6707
+# Source0-md5:	461b077f33ee7a447964f521e5455fd1
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel
