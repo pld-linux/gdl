@@ -2,7 +2,7 @@ Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	2.26.2
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.26/%{name}-%{version}.tar.bz2
@@ -102,6 +102,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/ca@valencia
 
 %find_lang %{name}-1
 
