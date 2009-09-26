@@ -1,19 +1,18 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	2.26.2
-Release:	2
+Version:	2.28.0
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	461b077f33ee7a447964f521e5455fd1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.28/%{name}-%{version}.tar.bz2
+# Source0-md5:	fb0030d3a81fd52932f9cba09e4ce1e0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
@@ -44,7 +43,6 @@ Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.16.0
-Requires:	libglade2-devel >= 1:2.6.2
 Requires:	libxml2-devel >= 1:2.6.26
 
 %description devel
@@ -103,8 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/ca@valencia
-
 %find_lang %{name}-1
 
 %clean
@@ -117,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgdl-1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgdl-1.so.0
+%attr(755,root,root) %ghost %{_libdir}/libgdl-1.so.3
 %{_datadir}/gdl
 
 %files devel
