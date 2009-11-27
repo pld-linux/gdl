@@ -9,6 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.28/%{name}-%{version}.tar.
 # Source0-md5:	fb0030d3a81fd52932f9cba09e4ce1e0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	gtk-doc >= 1.4
