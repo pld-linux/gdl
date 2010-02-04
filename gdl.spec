@@ -2,7 +2,7 @@ Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	2.28.2
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.28/%{name}-%{version}.tar.bz2
@@ -83,6 +83,7 @@ Dokumentacja API biblioteki gdl.
 
 %build
 %{__glib_gettextize}
+%{__gtkdocize}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
