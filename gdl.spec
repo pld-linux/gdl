@@ -1,12 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	2.28.2
-Release:	3
+Version:	2.30.0
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	8070b7effb3ca80e7f4f0c90924f6718
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	ce4eef03a36bf6abd9f8cbad4806d7b8
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
@@ -17,6 +17,7 @@ BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -81,6 +82,9 @@ Dokumentacja API biblioteki gdl.
 %prep
 %setup -q
 
+sed -i -e 's/^en@shaw//' po/LINGUAS
+rm -f po/en@shaw.po
+
 %build
 %{__glib_gettextize}
 %{__gtkdocize}
@@ -91,6 +95,7 @@ Dokumentacja API biblioteki gdl.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	--with-html-dir=%{_gtkdocdir} \
 	--enable-gtk-doc \
 	--enable-static
