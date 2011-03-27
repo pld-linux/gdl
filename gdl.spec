@@ -17,7 +17,6 @@ BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -81,9 +80,6 @@ Dokumentacja API biblioteki gdl.
 
 %prep
 %setup -q
-
-sed -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
 
 %build
 %{__glib_gettextize}
