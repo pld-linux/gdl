@@ -1,17 +1,18 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	2.30.1
+Version:	3.0.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	4af16be490b47ce4e828a2fb93633856
-BuildRequires:	autoconf >= 2.53
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	339208b871961e0420f65e1638ec048b
+BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gobject-introspection-devel >= 0.10.0
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
@@ -43,7 +44,7 @@ Summary:	Header files for gdl development
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.16.0
+Requires:	gtk+3-devel >= 3.0.0
 Requires:	libxml2-devel >= 1:2.6.26
 
 %description devel
@@ -86,7 +87,7 @@ Dokumentacja API biblioteki gdl.
 %{__gtkdocize}
 %{__intltoolize}
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -104,7 +105,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}-1
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
+%find_lang %{name}-3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -112,24 +115,25 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{name}-1.lang
+%files -f %{name}-3.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libgdl-1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgdl-1.so.3
-%{_datadir}/gdl
+%attr(755,root,root) %{_libdir}/libgdl-3.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgdl-3.so.1
+%{_libdir}/girepository-1.0/Gdl-3.typelib
+%{_datadir}/gdl-3
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libgdl-1.so
-%{_includedir}/libgdl-1.0
-%{_libdir}/libgdl-1.la
-%{_pkgconfigdir}/gdl-1.0.pc
+%attr(755,root,root) %{_libdir}/libgdl-3.so
+%{_datadir}/gir-1.0/Gdl-3.gir
+%{_includedir}/libgdl-3.0
+%{_pkgconfigdir}/gdl-3.0.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libgdl-1.a
+%{_libdir}/libgdl-3.a
 
 %files apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/gdl
+%{_gtkdocdir}/gdl-3.0
