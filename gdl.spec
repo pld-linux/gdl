@@ -3,6 +3,7 @@ Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	2.30.1
 Release:	3
+Epoch:		1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.30/%{name}-%{version}.tar.bz2
@@ -42,7 +43,7 @@ idl).
 Summary:	Header files for gdl development
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki gdl
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.16.0
 Requires:	libxml2-devel >= 1:2.6.26
 
@@ -58,7 +59,7 @@ używających bibliotek gdl.
 Summary:	Static libraries for gdl development
 Summary(pl.UTF-8):	Statyczne biblioteki gdl
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 This package contains the static gdl libraries.
