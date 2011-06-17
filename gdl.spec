@@ -2,7 +2,7 @@ Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	2.30.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
