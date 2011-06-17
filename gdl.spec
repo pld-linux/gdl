@@ -2,7 +2,7 @@ Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
 Version:	2.30.1
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/2.30/%{name}-%{version}.tar.bz2
@@ -104,6 +104,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgdl-1.la
+
 %find_lang %{name}-1
 
 %clean
@@ -123,7 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgdl-1.so
 %{_includedir}/libgdl-1.0
-%{_libdir}/libgdl-1.la
 %{_pkgconfigdir}/gdl-1.0.pc
 
 %files static
