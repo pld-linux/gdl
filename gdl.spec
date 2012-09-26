@@ -1,12 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	3.4.2
+Version:	3.6.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	501f6d2add5aa1758a51f140b9644602
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.6/%{name}-%{version}.tar.xz
+# Source0-md5:	cb1ce1aab8aa5bef56505237d711b83b
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
@@ -14,7 +14,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.4
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	intltool >= 0.40.4
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
@@ -119,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgdl-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgdl-3.so.2
+%attr(755,root,root) %ghost %{_libdir}/libgdl-3.so.5
 %{_libdir}/girepository-1.0/Gdl-3.typelib
 
 %files devel
