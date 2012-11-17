@@ -1,12 +1,12 @@
 Summary:	GNOME Devtool Libraries
 Summary(pl.UTF-8):	Biblioteki GNOME Devtool
 Name:		gdl
-Version:	3.6.0
-Release:	2
+Version:	3.6.2
+Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	cb1ce1aab8aa5bef56505237d711b83b
+# Source0-md5:	c871909b2948cd173b80ce8565a5d168
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
