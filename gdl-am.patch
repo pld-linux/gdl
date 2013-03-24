@@ -1,0 +1,27 @@
+From a5f85b5a53cd477c476e4aabfaf80e2fa8a75947 Mon Sep 17 00:00:00 2001
+From: Marcin Banasiak <marcin.banasiak@gmail.com>
+Date: Sun, 24 Mar 2013 20:39:29 +0100
+Subject: [PATCH] Fix build with automake 1.13
+
+In automake 1.13 AM_CONFIG_HEADER has been removed in favour of
+AC_CONFIG_HEADERS.
+---
+ configure.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.in b/configure.in
+index bc146a5..5d0feab 100644
+--- a/configure.in
++++ b/configure.in
+@@ -8,7 +8,7 @@ dnl ==========================================================================
+ AC_PREREQ(2.65)
+ AC_INIT(gdl)
+ AC_CONFIG_MACRO_DIR([m4])
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ GDL_MAJOR_VERSION=3
+ GDL_MINOR_VERSION=8
+-- 
+1.8.2
+
