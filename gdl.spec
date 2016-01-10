@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# static library
-#
+
 Summary:	GNOME Devtools Library
 Summary(pl.UTF-8):	Biblioteka GNOME Devtools Library
 Name:		gdl
 Version:	3.18.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.18/%{name}-%{version}.tar.xz
@@ -69,6 +69,9 @@ Summary:	gdl library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki gdl
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 gdl library API documentation.
