@@ -5,12 +5,12 @@
 Summary:	GNOME Devtools Library
 Summary(pl.UTF-8):	Biblioteka GNOME Devtools Library
 Name:		gdl
-Version:	3.20.0
+Version:	3.22.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	32dcfb6c037672676f928010c2e8147a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	2a57a7fe2c11a65672f1f06b95d4ffb3
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd43-xml
