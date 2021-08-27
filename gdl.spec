@@ -5,12 +5,12 @@
 Summary:	GNOME Devtools Library
 Summary(pl.UTF-8):	Biblioteka GNOME Devtools Library
 Name:		gdl
-Version:	3.34.0
+Version:	3.40.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gdl/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	d624f2ca85555402828d5c4a98912b82
+Source0:	https://download.gnome.org/sources/gdl/3.40/%{name}-%{version}.tar.xz
+# Source0-md5:	21df1254b49b74a498feb99be57364d0
 URL:		https://gitlab.gnome.org/GNOME/gdl
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.10
@@ -23,6 +23,9 @@ BuildRequires:	intltool >= 0.40.4
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
