@@ -6,7 +6,7 @@ Summary:	GNOME Devtools Library
 Summary(pl.UTF-8):	Biblioteka GNOME Devtools Library
 Name:		gdl
 Version:	3.40.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/gdl/3.40/%{name}-%{version}.tar.xz
