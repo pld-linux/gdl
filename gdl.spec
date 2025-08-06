@@ -11,6 +11,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/gdl/3.40/%{name}-%{version}.tar.xz
 # Source0-md5:	21df1254b49b74a498feb99be57364d0
+Patch0:		types.patch
 URL:		https://gitlab.gnome.org/GNOME/gdl
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.10
@@ -81,6 +82,7 @@ Dokumentacja API biblioteki gdl.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 #{__glib_gettextize}
